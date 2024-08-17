@@ -7,6 +7,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm --filter @anan-ui/playground dev",
+    "dev:docs": "pnpm --filter @anan-ui/docs docs:dev",
+    "dev:build": "pnpm --filter @anan-ui/core docs:build",
     "build-components": "cross-env NODE_ENV=production pnpm --filter @anan-ui/core build"
   },
   "keywords": [],
