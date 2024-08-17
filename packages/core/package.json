@@ -1,0 +1,52 @@
+{
+  "name": "@anan-ui/core",
+  "version": "1.0.0",
+  "description": "Components library by Vue3 + Ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "./dist/index.css",
+    "./dist/theme/*.css"
+  ],
+  "main": "./dist/umd/index.umd.cjs",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.umd.cjs",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+  "scripts": {
+    "build": "run-p build-es build-umd",
+    "build:watch": "run-p build-es:watch build-umd:watch",
+    "build-es": "vite build --config build/vite.es.config.ts",
+    "build-umd": "vite build --config build/vite.umd.config.ts",
+    "build-es:watch": "vite build --watch --config build/vite.es.config.ts",
+    "build-umd:watch": "vite build --watch --config build/vite.umd.config.ts"
+  },
+  "dependencies": {
+    "@anan-ui/components": "workspace:*",
+    "@anan-ui/theme": "workspace:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "terser": "^5.31.6",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-dts": "^4.0.3"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.27"
+  }
+}
